@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="A propos | Banconlé  AKOBI" description="A PROPOS de banconlé ismaeil">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À Propos"
+				tagline="Merci de votre visite. Lisez ci-dessous pour en savoir plus sur moi-même et mon parcours."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/profile2.jpg"
+					alt="Banconle AKOBI travaille avec ses camarades"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Développement Personnel et Écriture</h2></h2>
+				<div class="content">
+					<p>
+						Une chose est sûr , je suis amoureux de la bonne humeur. Le développement personnel est ma passion, un moteur qui alimente ma soif d'apprendre et de grandir constamment. En tant qu'auteur du livre "MORSE" à 18 ans , une exploration profonde de la bonne et calme discipline, j'ai façonné mes convictions en des mots réfléchis. C'est une invitation à découvrir comment la discipline crée des habitudes, les habitudes créent la constance, et la constance conduit à la croissance.
+					</p>
+					
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Compétences Techniques</h2>
+				<div class="content">
+					<p>Mes compétences techniques incluent le développement web, la programmation, l'administration réseau local, la gestion de bases de données, la modélisation tridimensionnelle, et je suis en formation autodidacte débutante en sécurité .</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Veille Technologique</h2>
+				<div class="content">
+					<p>Je reste constamment à l'affût des dernières tendances pour demeurer à la pointe de la technologie via des vidéos sur des profils YouTube connus ou via la lecture d'articles, tant sur l'IA que la cyber.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Objectifs et Vision</h2>
+				<div class="content">
+					<p>
+						Mes objectifs et ma vision de la vie se dévoileront à travers mes réalisations. Chaque projet, chaque apprentissage, chaque nouvelle compétence acquise me rapprochera de la personne que je souhaite devenir.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
